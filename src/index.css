@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Nunito:wght@400;700;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-sakura-pink: #FF9E9E;
+  --color-sakura-dark: #FF7675;
+  --color-deep-indigo: #2D3436;
+  --color-indigo-dark: #1E272E;
+  --color-gold: #FDCB6E;
+  --color-gold-dark: #E1B12C;
+  --color-paper-white: #FDFBF7;
+  --color-success: #00B894;
+  --color-success-dark: #00A383;
+  --color-error: #FF7675;
+  --color-error-dark: #D63031;
+
+  --font-sans: 'Nunito', 'Inter', sans-serif;
+  --font-jp: 'Noto Sans JP', sans-serif;
+
+  --shadow-game-sm: 0 2px 0 0 rgba(0, 0, 0, 0.2);
+  --shadow-game-md: 0 4px 0 0 rgba(0, 0, 0, 0.2);
+  --shadow-game-lg: 0 6px 0 0 rgba(0, 0, 0, 0.2);
+  --shadow-game-xl: 0 8px 0 0 rgba(0, 0, 0, 0.2);
+
+  --image-pattern-dots: radial-gradient(#CBD5E0 1px, transparent 1px);
+}
+
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.1);
+  }
+
+  .text-shadow-lg {
+    text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.15);
+  }
+
+  .bg-pattern {
+    background-color: var(--color-paper-white);
+    background-image: var(--image-pattern-dots);
+    background-size: 20px 20px;
+  }
+}
+
+
+
+
+body {
+  background-color: var(--color-paper-white);
+  background-image: var(--image-pattern-dots);
+  background-size: 20px 20px;
+}
