@@ -111,7 +111,7 @@ export const Learn: React.FC<LearnProps> = ({ items, onComplete, onProgress }) =
     if (!currentSlide) return null;
 
     return (
-        <div className="w-full max-w-xl mx-auto px-4 pt-2">
+        <div className="w-full max-w-xl mx-auto px-4 pt-2 pb-28 sm:pb-0">
             <div className="text-center mb-8">
                 <h2 className="text-3xl font-black text-deep-indigo">
                     {(currentSlide.type === 'kanji-logic' || currentSlide.type === 'grammar') ? 'Language Logic' : 'Learn'}
@@ -376,7 +376,7 @@ export const Learn: React.FC<LearnProps> = ({ items, onComplete, onProgress }) =
                 </AnimatePresence>
 
                 {/* Progress Bar */}
-                <div className="absolute -bottom-16 left-0 w-full flex justify-between items-center px-2">
+                <div className="fixed inset-x-0 bottom-0 z-40 flex items-center justify-between gap-3 border-t border-slate-200 bg-slate-50/95 px-4 py-3 pb-[calc(env(safe-area-inset-bottom)+0.75rem)] shadow-[0_-8px_24px_rgba(15,23,42,0.08)] backdrop-blur sm:absolute sm:-bottom-16 sm:left-0 sm:w-full sm:border-0 sm:bg-transparent sm:px-2 sm:py-0 sm:shadow-none sm:backdrop-blur-none">
                     <div className="flex gap-1 h-2 max-w-[50%] overflow-hidden">
                         {slides.map((_, idx) => (
                             <div
@@ -388,18 +388,18 @@ export const Learn: React.FC<LearnProps> = ({ items, onComplete, onProgress }) =
                         ))}
                     </div>
 
-                    <div className="flex items-center gap-2">
+                    <div className="flex shrink-0 items-center gap-2">
                         {currentIndex > 0 && (
                             <Button
                                 variant="ghost"
                                 size="lg"
                                 onClick={handleBack}
-                                className="rounded-full px-5 border border-slate-200 text-slate-500 hover:text-deep-indigo"
+                                className="rounded-full border border-slate-200 px-4 text-slate-500 hover:text-deep-indigo sm:px-5"
                             >
                                 ← Back
                             </Button>
                         )}
-                        <Button onClick={handleNext} size="lg" className="rounded-full px-8 shadow-game-md hover:translate-y-[-2px] active:translate-y-0">
+                        <Button onClick={handleNext} size="lg" className="rounded-full px-6 shadow-game-md hover:translate-y-[-2px] active:translate-y-0 sm:px-8">
                             {currentIndex === slides.length - 1 ? 'Start Practice' : 'Next'} <ArrowRight className="ml-2 w-5 h-5" />
                         </Button>
                     </div>
